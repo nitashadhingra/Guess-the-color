@@ -1,0 +1,79 @@
+body{
+    background-color: #31302c;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header{
+    text-align: center;
+    background: royalblue;
+    padding-top: 5px;
+}
+
+h1{
+    color: black;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+h2{
+    color:white;
+    margin:0;
+    padding-bottom: 5px;
+    font-size: 200%;
+}
+
+#choices{
+    max-width: 500px;
+    /* align-content: center; */
+    margin: 30px auto;
+}
+
+#bar{
+    background: white;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+button{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 900;
+    font-size: inherit;
+    color: royalblue;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+button:hover{
+    color: white;
+    background: royalblue;
+}
+
+.status{
+    display: inline-block;
+    width: 12%;
+}
+
+.selected{
+    background: royalblue;
+    color: white;
+    border: none;
+}
+
+.option{
+    width: 30%;
+    padding-bottom: 30%;
+    background:brown;
+    margin: 1.66%;
+    float: left;
+    border-radius: 8px;
+    transition: background 0.4s;
+    -webkit-transition: background 0.4s;
+    -moz-transition: background 0.4s;
+}
