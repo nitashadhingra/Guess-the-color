@@ -45,20 +45,7 @@ for(var i=0 ; i<squares.length ; i++){
 
 var reset = document.querySelector("button");
 reset.addEventListener("click", function(){
-    options = chooseColor(tiles);
-    pickedClr = pickColor();
-    console.log(pickedClr);
-    ques.textContent = pickedClr;
-    message.textContent = "";
-    for(var i=0 ; i<squares.length ; i++){
-        if(options[i]){
-            squares[i].style.backgroundColor = options[i];
-            squares[i].style.display = "block";
-        }
-        else
-            squares[i].style.display = "none";
-    }
-    document.querySelector("h1").style.backgroundColor = "royalblue";
+    redo();
 });
 
 var lvl = document.querySelectorAll(".levels");
@@ -75,20 +62,25 @@ for(var i=0 ; i<lvl.length ; i++){
         else{
             tiles = 6;
         }
-        console.log(tiles);
-        options = chooseColor(tiles);
-        console.log(options.length);
-        pickedClr = pickColor();
-        for(var i=0 ; i<squares.length ; i++){
-            if(options[i]){
-                squares[i].style.backgroundColor = options[i];
-                squares[i].style.display = "block";
-            }
-            else
-                squares[i].style.display = "none";
-        }
-        
+        redo();
     });
+}
+
+function redo(){
+    options = chooseColor(tiles);
+    pickedClr = pickColor();
+    console.log(pickedClr);
+    ques.textContent = pickedClr;
+    message.textContent = "";
+    for(var i=0 ; i<squares.length ; i++){
+        if(options[i]){
+            squares[i].style.backgroundColor = options[i];
+            squares[i].style.display = "block";
+        }
+        else
+            squares[i].style.display = "none";
+    }
+    document.querySelector("h1").style.backgroundColor = "royalblue";
 }
 
 function pickColor() {
