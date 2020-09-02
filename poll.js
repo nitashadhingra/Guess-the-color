@@ -61,32 +61,35 @@ reset.addEventListener("click", function(){
     document.querySelector("h1").style.backgroundColor = "royalblue";
 });
 
-var level1 = document.getElementById("lvl1");
-var level2 = document.getElementById("lvl2");
-level1.addEventListener("click", function(){
-    tiles = 3;
-    options = chooseColor(tiles);
-    pickedClr = pickColor();
-    for(var i=0 ; i<squares.length ; i++){
-        if(options[i])
-            squares[i].style.backgroundColor = options[i];
-        else
-            squares[i].style.display = "none";
-    }
-    level1.classList.add("selected");
-    level2.classList.remove("selected");
-});
-level2.addEventListener("click", function(){
-    tiles = 6;
-    options = chooseColor(tiles);
-    pickedClr = pickColor();
-    for(var i=0 ; i<squares.length ; i++){
-        squares[i].style.backgroundColor = options[i];
-        squares[i].style.display = "block";
-    }
-    level2.classList.add("selected");
-    level1.classList.remove("selected");
-});
+var lvl = document.querySelectorAll(".levels");
+
+for(var i=0 ; i<lvl.length ; i++){
+    lvl[i].addEventListener("click", function(){
+        lvl[0].classList.remove("selected");
+        lvl[1].classList.remove("selected");
+        this.classList.add("selected");
+            
+        if(this.textContent == "Easy"){
+            tiles = 3;
+        }
+        else{
+            tiles = 6;
+        }
+        console.log(tiles);
+        options = chooseColor(tiles);
+        console.log(options.length);
+        pickedClr = pickColor();
+        for(var i=0 ; i<squares.length ; i++){
+            if(options[i]){
+                squares[i].style.backgroundColor = options[i];
+                squares[i].style.display = "block";
+            }
+            else
+                squares[i].style.display = "none";
+        }
+        
+    });
+}
 
 function pickColor() {
     var index = Math.floor(Math.random() * options.length);
